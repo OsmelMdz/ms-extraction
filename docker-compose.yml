@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  ocr-service:
+    build: .
+    container_name: ocr_local_service
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./docstrange_models:/root/.cache/docstrange
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+    restart: always
