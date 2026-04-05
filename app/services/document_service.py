@@ -1,7 +1,17 @@
+import os
+
+from dotenv import load_dotenv
 from docstrange import DocumentExtractor
 from app.schemas.response_model import ACTA_SCHEMAS
 
-extractor = DocumentExtractor(api_key="a7ccc8d4-589d-44dc-b3fb-56898e225435")
+load_dotenv()
+
+API_KEY = os.getenv("DOCTSTRANGE_API_KEY")
+
+if not API_KEY:
+    raise RuntimeError("Falta la variable de entorno DOCTSTRANGE_API_KEY.")
+
+extractor = DocumentExtractor(api_key=API_KEY)
 
 class DocumentService:
     @staticmethod

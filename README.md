@@ -150,9 +150,19 @@ La ruta de almacenamiento temporal puede configurarse con la variable de entorno
 
 ### 7.3 API Key de DocStrange
 
-El extractor se inicializa actualmente con API key embebida en codigo.
+La API key DEBE definirse en la variable de entorno `DOCTSTRANGE_API_KEY`.
 
-Recomendacion para produccion: mover esta clave a variable de entorno y leerla en tiempo de ejecucion.
+La clave DEBE generarse en la plataforma oficial de DocStrange/Nanonets, en la siguiente ruta:
+
+https://docstrange.nanonets.com/app
+
+Ejemplo en `.env`:
+
+```env
+DOCTSTRANGE_API_KEY=tu_clave_aqui
+```
+
+El archivo `.env` NO DEBE subirse al repositorio.
 
 ## 8. Estructura del Proyecto
 

@@ -1,0 +1,6 @@
+.env
+ocr-docstrange.txt
+__pycache__/
+*.pyc
+.venv/
+venv/

@@ -4,6 +4,8 @@ services:
   ocr-service:
     build: .
     container_name: ocr_local_service
+    env_file:
+      - .env
     ports:
       - "8000:8000"
     volumes:
